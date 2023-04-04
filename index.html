@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,26 +11,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/449b7f52cc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/javascript.css">
 </head>
 <body>
     <header class="header">
         <h1 class="headerh1">Disponibles <span class="headerspan">Mauro Sergio</span></h1>
     </header>
-    <main class="index">
-        <div class="indexcontenedor">
-            <img class="indeximg" src="./imagenes/Remera masculina.jpg" alt="una imagen">
-            <h4 class="indexh4">Remera azul marino</h4>
-        </div>
-        <div class="indexcontenedor">
-            <img class="indeximg" src="./imagenes/Campera femenina.jpg" alt="una imagen">
-            <h4 class="indexh4">Campera masculina azul marino</h4>
-        </div>
-        <div class="indexcontenedor">
-            <img class="indeximg" src="./imagenes/Campera masculina.jpg" alt="una imagen">
-            <h4 class="indexh4">Campera femenina</h4>
+    <main id="index">
+        <div id="indexcontenedor">  
+        <!-- aqui productos -->
+        </div> 
+        <!-- aqui tabla de carrito -->
+        <div id="indexcarrito">
+            <h4 id="indexcarritoh4">Tu carrito:</h4>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID:</th>
+                  <th>Nombre:</th>
+                  <th>Precio:</th>
+                </tr>
+              </thead>
+              <tbody id="tablabody">
+                <!-- aqui tabla carrito -->
+              </tbody>
+            </table>
+            <h4 id="total">Total a pagar:</h4>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="./js/productos.js"></script>
     <script src="./js/codigo.js"></script>
 </body>
 </html>

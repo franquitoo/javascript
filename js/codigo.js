@@ -1,37 +1,46 @@
-let nombreusuario = prompt('Ingrese su nombre completo')
-alert('Bienvenido '+nombreusuario)
+const carrito = [];
 
-let total = 0
+let contenedor = document.getElementById('indexcontenedor');
 
-let mensaje = prompt(nombreusuario+': Desea comprar alguna prenda? (Si/No)')
-
-while (mensaje == 'Si' || mensaje == 'si'){
-    let producto = prompt('1-Remera azul marino\n2-Campera femenina\n3-Campera masculina azul marino')
-    switch (producto){
-        case '1':
-            alert('Agregaste al carro Remera Azul marino... $1890')
-            incrementartotal(1890);
-            break;
-        case '2':
-            alert('Agregaste al carro Campera femenina... $2690')
-            incrementartotal(2690);
-            break;    
-        case '3':
-            alert('Agregaste al carro Campera masculina azul marino ... $6590')
-            incrementartotal(6590);
-            break;
-        default:
-            alert('Producto inexistente en stock')
-            break
+function establecerProductos(){
+    for(const producto of productos){
+        contenedor.innerHTML += `
+        <div class="card" style="width: 18rem;">
+            <img src="${producto.imagen}" class="card-img-top" alt="Campera azul masculino">
+                <div class="card-body">
+                    <h5 class="card-title indexcontenedorh5">${producto.nombre}</h5>
+                    <p class="card-text">${producto.description}</p>
+                    <p class="card-text">${producto.talle}</p>
+                    <p class="card-text">${producto.precio}</p>
+                    <button id='btn${producto.id}' href="#" class="btn btn-primary">Comprar</button>
+                </div>
+        </div>
+        `;      
     }
 
-    mensaje = prompt(nombreusuario+': Desea comprar otra prenda? (Si/No)')
+    productos.forEach((producto)=>{
+        document.getElementById(`btn${producto.id}`).addEventListener('click',()=>{agregarAlCarrito(producto);})
+    })
+}
+
+establecerProductos();
+
+function agregarAlCarrito(agregoCarrito){
+    carrito.push(agregoCarrito);
+    console.table(carrito)
+    alert(`Agregaste ${agregoCarrito.nombre} al carrito!`)
+    document.getElementById('tablabody').innerHTML += `
+    <tr>
+        <td>${agregoCarrito.id}</td>
+        <td>${agregoCarrito.nombre}</td>
+        <td>$${agregoCarrito.precio}</td>
+    </tr>
+    `;
+
+    let totalCarrito = carrito.reduce((acumulador,producto)=>acumulador+producto.precio,0);
+    document.getElementById('total').innerText = 'Total a pagar: $'+totalCarrito;
 
 }
 
-alert('total de la compra '+total)
 
-function incrementartotal(precio){
-    total = total + precio;
-    alert('llevas gastado $'+total)
-}
+

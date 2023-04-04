@@ -9,11 +9,15 @@
 .px {
   font-size: 16px; }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, a {
   font-family: 'Open Sans', sans-serif; }
 
 .header {
   background-color: orange; }
+  .headeranchor {
+    font-size: 2rem;
+    color: white;
+    text-align: end; }
   .headerh1 {
     text-align: center;
     font-size: 3.5rem;
@@ -23,17 +27,22 @@ h1, h2, h3, h4, h5, h6, p {
   .headerspan {
     color: black; }
 
-.index {
+#index, #indexcontenedor {
+  margin-top: 1rem;
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 1rem; }
-  .indexcontenedor {
-    border: black solid 1px;
-    border-radius: 1rem;
-    padding: 1rem; }
-  .indexh4 {
-    text-align: center;
-    padding: 0.1rem; }
-  .indeximg {
-    height: 20rem;
-    width: 15rem; }
+  justify-content: space-evenly; }
+  #indexcontenedor {
+    gap: 1rem; }
+  #indexcarritoh4 {
+    text-align: center; }
+
+.card-title {
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-color: orange;
+  text-align: center; }
+
+.btn-primary {
+  background-color: orange;
+  border: none;
+  color: black; }

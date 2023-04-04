@@ -1,21 +1,27 @@
-.index{
+#index{
+    margin-top: 1rem;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 1rem;
 
     &contenedor{
-        border: black solid 1px;
-        border-radius: 1rem;
-        padding: 1rem;
+        @extend #index;
+        gap: 1rem;
     }
 
-    &h4{
+    &carritoh4{
         text-align: center;
-        padding: 0.1rem;
-    }
-
-    &img{
-        height: 20rem;
-        width: 15rem;
     }
 }
+
+.card-title{
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    background-color: orange;
+    text-align: center;
+}
+.btn-primary{
+    background-color: orange;
+    border: none;
+    color: black;
+}
+
