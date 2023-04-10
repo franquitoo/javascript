@@ -16,13 +16,40 @@ h1,h2,h3,h4,h5,h6,p,a{
     font-family: 'Open Sans', sans-serif;
 }
 
+.light{
+    background-color: white;
+    color: black;
+}
+
+.dark{
+    background-color: rgba(0, 0, 0, 0.733);
+    color: white;
+}
+
 .header{
+    display: grid;
+    grid-template-columns: 85% 20%;
+    grid-template-rows: auto;
+    grid-template-areas: "h1 icon";
     background-color: orange;
 
+    &div{
+        grid-area: h1;
+
+        &2{
+            grid-area: icon;
+            display: flex;
+            align-items: center;
+        }
+    }
+
     &anchor{
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: white;
-        text-align: end;
+        text-align: center;
+        text-decoration: none;
+        padding: 0.5rem;
+        border: 2px white solid;
     }
 
     &h1{
@@ -31,6 +58,12 @@ h1,h2,h3,h4,h5,h6,p,a{
         padding: 2rem;
         color: white;
         text-decoration: underline;
+       
+    }
+
+    &icon{
+        color: wheat;
+        text-align: center;
     }
 
     &span{

@@ -24,3 +24,11 @@ const productos = [
     description: "Remera manga larga para mujer con empuñado de lana."
 }
 ]
+
+const guardarProductos = (clave,valor) => {localStorage.setItem(clave,valor)}
+
+guardarProductos("Stock", JSON.stringify(productos))
+
+JSON.parse(localStorage.getItem(productos));
+
+console.table(productos)

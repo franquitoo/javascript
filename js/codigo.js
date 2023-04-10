@@ -1,3 +1,32 @@
+let bienvenido =prompt('Ingrese su nombre completo');
+alert('Bienvenido '+bienvenido);
+
+localStorage.setItem('usuario activo', bienvenido);
+
+let boton = document.getElementById('mode');
+let body = document.getElementById('body');
+
+if(localStorage.getItem('mode') == 'dark'){
+    body.classList.remove('light');
+    body.classList.add('dark');
+    boton.innerText='Light mode';
+}
+
+boton.onclick = () =>{
+    if(localStorage.getItem('mode') == dark){
+        body.classList.remove('dark');
+        body.classList.add('light');
+        boton.innerText='Dark mode'
+        localStorage.setItem('mode','light')
+    }else{
+        body.classList.remove('light');
+        body.classList.add('dark');
+        boton.innerText='light mode'
+        localStorage.setItem('mode','dark')
+    }
+}
+
+
 const carrito = [];
 
 let contenedor = document.getElementById('indexcontenedor');
@@ -41,6 +70,8 @@ function agregarAlCarrito(agregoCarrito){
     document.getElementById('total').innerText = 'Total a pagar: $'+totalCarrito;
 
 }
+
+
 
 
 
