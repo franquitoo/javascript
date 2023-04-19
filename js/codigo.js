@@ -80,8 +80,6 @@ function AgregarAlCarrito(agregoCarrito){
     let totalCarrito = carrito.reduce((acumulador,producto)=>acumulador+producto.precio,0);
     document.getElementById('total').innerText = 'Total a pagar: $'+totalCarrito;
 
-    AgregarAlCarrito();
-
 }
 
 
