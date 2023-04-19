@@ -1,19 +1,26 @@
-let bienvenido =prompt('Ingrese su nombre completo');
-alert('Bienvenido '+bienvenido);
+let bienvenida =prompt('Ingrese su nombre completo');
 
-localStorage.setItem('usuario activo', bienvenido);
+let bienvenido = document.getElementById('bienvenido');
+bienvenido.innerText=('Bienvenido '+ bienvenida +'!!!');
+
+localStorage.setItem('usuario activo', bienvenida);
 
 let boton = document.getElementById('mode');
 let body = document.getElementById('body');
+let table =document.getElementById('table');
+let tablebody= document.getElementById('tablebody');
 
 if(localStorage.getItem('mode') == 'dark'){
     body.classList.remove('light');
     body.classList.add('dark');
     boton.innerText='Light mode';
+    table.classList.add('dark')
+    tablebody.classList.add('dark')
+
 }
 
 boton.onclick = () =>{
-    if(localStorage.getItem('mode') == dark){
+    if(localStorage.getItem('mode') == "dark"){
         body.classList.remove('dark');
         body.classList.add('light');
         boton.innerText='Dark mode'
@@ -48,13 +55,17 @@ function establecerProductos(){
     }
 
     productos.forEach((producto)=>{
-        document.getElementById(`btn${producto.id}`).addEventListener('click',()=>{agregarAlCarrito(producto);})
+        document.getElementById(`btn${producto.id}`).addEventListener('click',()=>{AgregarAlCarrito(producto);})
     })
 }
 
 establecerProductos();
 
-function agregarAlCarrito(agregoCarrito){
+AgregarLocalStorage = (agregoCarrito) =>{
+    localStorage.setItem('producto en interes',JSON.stringify(agregoCarrito))
+}
+
+function AgregarAlCarrito(agregoCarrito){
     carrito.push(agregoCarrito);
     console.table(carrito)
     alert(`Agregaste ${agregoCarrito.nombre} al carrito!`)
@@ -69,7 +80,12 @@ function agregarAlCarrito(agregoCarrito){
     let totalCarrito = carrito.reduce((acumulador,producto)=>acumulador+producto.precio,0);
     document.getElementById('total').innerText = 'Total a pagar: $'+totalCarrito;
 
+    AgregarAlCarrito();
+
 }
+
+
+
 
 
 

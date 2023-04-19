@@ -1,15 +1,30 @@
 #index{
     margin-top: 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 
     &contenedor{
-        @extend #index;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
         gap: 1rem;
     }
 
     &carritoh4{
         text-align: center;
+    }
+
+    &carritoandproductos{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.index{
+    &bienvenida{
+        text-align: center;
+        text-decoration: underline;
     }
 }
 
