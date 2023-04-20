@@ -28,9 +28,9 @@ h1,h2,h3,h4,h5,h6,p,a{
 
 .header{
     display: grid;
-    grid-template-columns: 85% 20%;
+    grid-template-columns: auto 65% auto;
     grid-template-rows: auto;
-    grid-template-areas: "h1 icon";
+    grid-template-areas: "input h1 icon";
     background-color: orange;
 
     &div{
@@ -41,6 +41,20 @@ h1,h2,h3,h4,h5,h6,p,a{
             display: flex;
             align-items: center;
         }
+
+        &3{
+            display: flex;
+            flex-direction: column;
+            grid-area: input;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &input{
+        font-size: 1.3rem;
+        text-align: center;
+        border-radius: 1rem;
     }
 
     &anchor{

@@ -1,4 +1,5 @@
-let bienvenida =prompt('Ingrese su nombre completo');
+let input = document.getElementsByClassName('headerinput');
+
 
 let bienvenido = document.getElementById('bienvenido');
 bienvenido.innerText=('Bienvenido '+ bienvenida +'!!!');
@@ -68,8 +69,15 @@ AgregarLocalStorage = (agregoCarrito) =>{
 function AgregarAlCarrito(agregoCarrito){
     carrito.push(agregoCarrito);
     console.table(carrito)
-    alert(`Agregaste ${agregoCarrito.nombre} al carrito!`)
-    document.getElementById('tablabody').innerHTML += `
+    Swal.fire({
+        title: 'Genial',
+        text: `Agregaste al carrito ${agregoCarrito.nombre}`,
+        imageUrl: agregoCarrito.imagen,
+        imageWidth: 350,
+        imageHeight: 400,
+        imageAlt: agregoCarrito.nombre,
+      })
+    document.getElementById('tablebody').innerHTML += `
     <tr>
         <td>${agregoCarrito.id}</td>
         <td>${agregoCarrito.nombre}</td>
