@@ -1,5 +1,4 @@
-let input = document.getElementsByClassName('headerinput');
-
+let bienvenida =prompt('Ingrese su nombre completo');
 
 let bienvenido = document.getElementById('bienvenido');
 bienvenido.innerText=('Bienvenido '+ bienvenida +'!!!');
