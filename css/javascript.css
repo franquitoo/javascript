@@ -12,82 +12,65 @@
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: 'Open Sans', sans-serif; }
 
-.light {
-  background-color: white;
+.light, .btn-primary {
+  background-image: linear-gradient(to left, violet, white);
   color: black; }
 
 .dark {
-  background-color: black;
+  background-image: linear-gradient(to left, #ca2bca, #610d61, black);
   color: white; }
 
 .header {
-  display: grid;
-  grid-template-columns: auto 65% auto;
-  grid-template-rows: auto;
-  grid-template-areas: "input h1 icon";
-  background-color: orange; }
-  .headerdiv {
-    grid-area: h1; }
-    .headerdiv2 {
-      grid-area: icon;
-      display: flex;
-      align-items: center; }
-    .headerdiv3 {
-      display: flex;
-      flex-direction: column;
-      grid-area: input;
-      align-items: center;
-      justify-content: center; }
-  .headerinput {
-    font-size: 1.3rem;
-    text-align: center;
-    border-radius: 1rem; }
-  .headeranchor {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: 0.5rem;
-    border: 2px white solid; }
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #db54db;
+  align-items: center; }
   .headerh1 {
-    text-align: center;
-    font-size: 3.5rem;
-    padding: 2rem;
     color: white;
-    text-decoration: underline; }
-  .headericon {
-    color: wheat;
-    text-align: center; }
+    font-size: 4rem; }
+  .headerdiv {
+    padding: 2rem; }
   .headerspan {
-    color: black; }
+    color: black;
+    text-decoration: underline; }
+  .headerbutton {
+    padding: 1rem; }
+    .headerbuttonh3 {
+      font-size: 1.5rem; }
 
-#index {
-  margin-top: 1rem;
+.index {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; }
-  #indexcontenedor {
+  gap: 5rem; }
+  .indexcarrito {
+    padding: 2rem; }
+  .indexh1 {
+    font-size: 3rem;
+    padding: 2rem; }
+  .indexsection, .indexproductos, .indexproductos2, .indexproductos3 {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 1rem;
-    gap: 1rem; }
-  #indexcarritoh4 {
-    text-align: center; }
-  #indexcarritoandproductos {
-    display: flex;
-    justify-content: space-evenly; }
+    width: 100%; }
 
-.indexbienvenida {
-  text-align: center;
-  text-decoration: underline; }
+.card {
+  position: relative;
+  border-radius: 1rem; }
 
 .card-title {
   padding: 0.2rem;
   border-radius: 0.5rem;
-  background-color: orange;
+  background-color: #db54db;
   text-align: center; }
 
 .btn-primary {
-  background-color: orange;
+  background-color: #db54db;
   border: none;
   color: black; }
+
+.card-img-top {
+  max-height: 23rem;
+  border-radius: 1rem; }
+
+.card-body {
+  background-image: linear-gradient(to bottom, white, violet, #e04fe0);
+  border-radius: 1rem; }
