@@ -5,11 +5,31 @@
 
     &carrito{
         padding: 2rem;
+        background-image: linear-gradient(to right,rgb(235, 100, 235),white);
+    }
+
+    &segundoh1{
+        @extend .indexh1;
+    }
+
+    &divfinal{
+        display: flex;
+        justify-content: end;
+
+        &boton{
+            padding: 1rem;
+            background-image: linear-gradient(to right, rgb(255, 255, 255),rgb(221, 71, 221));
+            font-size: 1.1rem;
+        }
     }
 
     &h1{
-        font-size: 3rem;
-        padding: 2rem;
+        font-size: 2.5rem;
+        padding: 1rem;
+        background-image: linear-gradient(to left,white,rgb(240, 80, 240));
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
     }
 
     &section{

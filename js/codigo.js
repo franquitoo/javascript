@@ -1,42 +1,46 @@
-let bienvenida =prompt('Ingrese su nombre completo');
 
-let bienvenido = document.getElementById('bienvenido');
-bienvenido.innerText=('Bienvenido '+ bienvenida +'!!!');
+let bienvenida = Swal.fire({
+  title: 'Ingrese su nombre',
+  input: 'text',
+  inputAttributes: {
+    autocapitalize: 'off'
+  },
+  showCancelButton: true,
+  confirmButtonText: 'Confirm',
+  showLoaderOnConfirm: true,
+  preConfirm: (login) => {
+    return fetch(`//api.github.com/users/${login}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+        return response.json()
+      })
+      .catch(error => {
+        Swal.showValidationMessage(
+          `Request failed: ${error}`
+        )
+      })
+  },
+  allowOutsideClick: () => !Swal.isLoading()
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: `Bienvenido ${result.value.login} !!!`,
+    })
+  }
+})
 
-localStorage.setItem('usuario activo', bienvenida);
+let bienvenido = document.getElementById('bienvendio')
 
-let boton = document.getElementById('modebtn');
+
+
 let body = document.getElementById('body');
 let table =document.getElementById('table');
 let tablebody= document.getElementById('tablebody');
+let finalizarBoton = document.getElementById('finalizar');
 
-if(localStorage.getItem('mode') == 'dark'){
-    body.classList.remove('light');
-    body.classList.add('dark');
-    boton.innerText='Light mode';
-    table.classList.add('dark')
-    tablebody.classList.add('dark')
-
-}
-
-boton.onclick = () =>{
-    if(localStorage.getItem('mode') == "dark"){
-        body.classList.remove('dark');
-        body.classList.add('light');
-        boton.innerText='Dark mode';
-        tablebody.classList.add('light')
-        localStorage.setItem('mode','light');
-    }else{
-        body.classList.remove('light');
-        body.classList.add('dark');
-        boton.innerText='light mode';
-        tablebody.classList.add('light')
-        localStorage.setItem('mode','dark')
-    }
-}
-
-
-const carrito = [];
+let carrito = [];
 
 let contenedor = document.getElementById('indexsectionproductos');
 
@@ -145,6 +149,13 @@ function AgregarAlCarrito(agregoCarrito){
 
     let totalCarrito = carrito.reduce((acumulador,producto)=>acumulador+producto.precio,0);
     document.getElementById('total').innerText = 'Total a pagar: $'+totalCarrito;
+}
+
+finalizarBoton.onclick=()=>{
+    carrito = [];
+    document.getElementById('tablebody').innerHTML = '';
+    document.getElementById('total').innerText = 'Total a pagar: $';
+
 }
 
 

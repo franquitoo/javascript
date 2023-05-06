@@ -12,7 +12,7 @@
     font-size: 16px;
 }   
 
-h1,h2,h3,h4,h5,h6,p,a{
+h1,h2,h3,h4,h5,h6,p,a,button{
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -29,8 +29,9 @@ h1,h2,h3,h4,h5,h6,p,a{
 .header{
     display: flex;
     justify-content: space-evenly;
-    background-color: rgb(219, 84, 219);
+    background-image: linear-gradient(to right,rgb(233, 53, 233),white);
     align-items: center;
+    margin-bottom: 3rem;
 
     &h1{
         color: white;

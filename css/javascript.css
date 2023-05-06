@@ -9,7 +9,7 @@
 .px {
   font-size: 16px; }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, button {
   font-family: 'Open Sans', sans-serif; }
 
 .light, .btn-primary {
@@ -23,8 +23,9 @@ h1, h2, h3, h4, h5, h6, p, a {
 .header {
   display: flex;
   justify-content: space-evenly;
-  background-color: #db54db;
-  align-items: center; }
+  background-image: linear-gradient(to right, #e935e9, white);
+  align-items: center;
+  margin-bottom: 3rem; }
   .headerh1 {
     color: white;
     font-size: 4rem; }
@@ -43,10 +44,22 @@ h1, h2, h3, h4, h5, h6, p, a {
   flex-direction: column;
   gap: 5rem; }
   .indexcarrito {
-    padding: 2rem; }
-  .indexh1 {
-    font-size: 3rem;
-    padding: 2rem; }
+    padding: 2rem;
+    background-image: linear-gradient(to right, #eb64eb, white); }
+  .indexdivfinal {
+    display: flex;
+    justify-content: end; }
+    .indexdivfinalboton {
+      padding: 1rem;
+      background-image: linear-gradient(to right, white, #dd47dd);
+      font-size: 1.1rem; }
+  .indexh1, .indexsegundoh1 {
+    font-size: 2.5rem;
+    padding: 1rem;
+    background-image: linear-gradient(to left, white, #f050f0);
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem; }
   .indexsection, .indexproductos, .indexproductos2, .indexproductos3 {
     display: flex;
     justify-content: space-evenly;
